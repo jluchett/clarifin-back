@@ -3,10 +3,10 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
 
-// Importar rutas (¡Aún por crear!)
-// import transactionRoutes from './routes/transactions.js';
-// import categoryRoutes from './routes/categories.js';
-// import budgetRoutes from './routes/budgets.js';
+// Importar rutas
+import transactionRoutes from './src/routes/transactions';
+import categoryRoutes from './src/routes/categories';
+import budgetRoutes from './src/routes/budgets';
 // import reportRoutes from './routes/reports.js';
 // import syncRoutes from './routes/sync.js';
 
@@ -35,10 +35,9 @@ app.get("/", (req, res) => {
   res.send("API de Finanzas Personales funcionando!");
 });
 
-// Rutas de ejemplo (descomentar cuando las crees)
-// app.use('/api/transactions', transactionRoutes);
-// app.use('/api/categories', categoryRoutes);
-// app.use('/api/budgets', budgetRoutes);
+app.use('/api/transactions', transactionRoutes);
+app.use('/api/categories', categoryRoutes);
+app.use('/api/budgets', budgetRoutes);
 // app.use('/api/reports', reportRoutes);
 // app.use('/api/sync', syncRoutes); // Ruta para tu API de OCR
 
